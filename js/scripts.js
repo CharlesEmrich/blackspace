@@ -1,6 +1,11 @@
+/// Business ///
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
+/// User Interface ///
 $(function() {
     $("textarea").keyup(function() {
-      $("#output").text($(this).val()[$(this).val().length - 1]);
+      var outputChar = $(this).val()[$(this).val().length - 1]
+      $("#output").text(outputChar);
+
     });
 });
