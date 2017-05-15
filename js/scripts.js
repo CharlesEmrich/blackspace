@@ -1,32 +1,36 @@
 /// Business ///
-var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-var numbers  = "0123456789".split("");
+function Cipher () {
+  this.alpha   = "abcdefghijklmnopqrstuvwxyz".split("");
+  this.numbers = "0123456789".split("");
+}
 
+Cipher.prototype.encodeChar = function (char, shift) {
+  var outputArr = [];
+  if (this.alpha.indexOf(char) !== -1) {
+    outputArr.push(this.alpha[(this.alpha.indexOf(char) + 25) % 26], this.alpha[(this.alpha.indexOf(char) + 1) % 26]);
+  }
+  if (shift) {
+    outputArr = outputArr.map(function(letter) {
+      return letter.toUpperCase();
+    })
+  }
+  if (this.numbers.indexOf(char) !== -1) {
+    outputArr.push(this.numbers[(this.numbers.indexOf(char) + 9) % 10], this.numbers[(this.numbers.indexOf(char) + 1) % 10]);
+  }
+  return outputArr;
+};
+
+var ourCipher = new Cipher();
 /// User Interface ///
 $(function() {
   $("textarea").keypress(function(event) {
-    var inputChar = event.key.toLowerCase();
-    var outputArr = [];
+    var encodedChar = ourCipher.encodeChar(event.key.toLowerCase(), event.shiftKey);
+    console.log(encodedChar);
 
-    //NOTE: Dry this into a single function?
-    if (alphabet.indexOf(inputChar) !== -1) {
-        outputArr.push(alphabet[(alphabet.indexOf(inputChar) + 25) % 26], alphabet[(alphabet.indexOf(inputChar) + 1) % 26]);
-    }
-
-    if (event.shiftKey) {
-      outputArr = outputArr.map(function(letter) {
-        return letter.toUpperCase();
-      })
-    }
-
-    if (numbers.indexOf(inputChar) !== -1) {
-        outputArr.push(numbers[(numbers.indexOf(inputChar) + 9) % 10], numbers[(numbers.indexOf(inputChar) + 1) % 10]);
-    }
-
-    if (outputArr.length > 0) {
+    if (encodedChar.length > 0) {
       $("#output").append(
         "<div class='singleChar'>" +
-        outputArr[0] + "<span class='shifted'>" + outputArr[1] + "</span>" +
+        encodedChar[0] + "<span class='shifted'>" + encodedChar[1] + "</span>" +
         "</div>"
       );
     } else {
