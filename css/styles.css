@@ -18,20 +18,13 @@ body{
     src: url("/Users/Guest/desktop/blackspace/fonts/digital-7.ttf") format("opentype");
 }
 
-
 h1{
   display: block;
   text-align: center;
 }
 
-#textBox{
-  background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");
-  background-color: black;
-  color: white;
-  font-size: 80px;
-}
-
-textarea{
+#textShow{
+  background: transparent;
   font-family: textGyre;
   outline: none;
   width:50%;
@@ -41,4 +34,27 @@ textarea{
   overflow: auto;
   text-align: right;
   float: left;
+  background: transparent;
+  color: white;
+  font-size: 80px;
+  opacity: .15;
+}
+#textBox{
+  background: transparent;
+  font-family: textGyre;
+  outline: none;
+  width:50%;
+  height: 100%;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  text-align: left;
+  float: right;
+  background: transparent;
+  color: white;
+  font-size: 80px;
+}
+
+.ah{
+  color: green;
 }
