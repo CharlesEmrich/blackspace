@@ -1,13 +1,17 @@
 /// Business ///
 function Cipher () {
-  this.alpha   = "abcdefghijklmnopqrstuvwxyz".split("");
-  this.numbers = "0123456789".split("");
+  this.alpha        = "abcdefghijklmnopqrstuvwxyz".split("");
+  this.numbers      = "0123456789".split("");
+  this.cipherLength = 1;
 }
 
 Cipher.prototype.encodeChar = function (char, shift) {
   var outputArr = [];
   if (this.alpha.indexOf(char) !== -1) {
-    outputArr.push(this.alpha[(this.alpha.indexOf(char) + 25) % 26], this.alpha[(this.alpha.indexOf(char) + 1) % 26]);
+    for (var i = 1; i <= this.cipherLength; i++) {
+      outputArr.push(this.alpha[(this.alpha.indexOf(char) + i) % 26]);
+      outputArr.unshift(this.alpha[(this.alpha.indexOf(char) + 26 - i) % 26]);
+    }
   }
   if (shift) {
     outputArr = outputArr.map(function(letter) {
@@ -15,7 +19,10 @@ Cipher.prototype.encodeChar = function (char, shift) {
     })
   }
   if (this.numbers.indexOf(char) !== -1) {
-    outputArr.push(this.numbers[(this.numbers.indexOf(char) + 9) % 10], this.numbers[(this.numbers.indexOf(char) + 1) % 10]);
+    for (var i = 1; i <= this.cipherLength; i++) {
+      outputArr.push(this.numbers[(this.numbers.indexOf(char) + i) % 10]);
+      outputArr.unshift(this.numbers[(this.numbers.indexOf(char) + 10 - i) % 10]);
+    }
   }
   return outputArr;
 };
@@ -23,6 +30,12 @@ Cipher.prototype.encodeChar = function (char, shift) {
 var ourCipher = new Cipher();
 /// User Interface ///
 $(function() {
+  $("select").change(function() {
+    ourCipher.cipherLength = parseInt($(this).val());
+    console.log(ourCipher);
+    //TODO: re-parse output div using new cipherLength.
+  });
+
   $("textarea").keypress(function(event) {
     var encodedChar = ourCipher.encodeChar(event.key.toLowerCase(), event.shiftKey);
     console.log(encodedChar);
