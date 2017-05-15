@@ -17,6 +17,7 @@ $(function() {
       } else if (inputChar === "z") {
         outputArr.push("y","a");
       } else {
+        //NOTE: Use modulo to do this better.
         outputArr.push(alphabet[alphabet.indexOf(inputChar) - 1], alphabet[alphabet.indexOf(inputChar) + 1]);
       }
     }
@@ -50,4 +51,4 @@ $(function() {
         "</div>")
     }
   });
-}
+});
