@@ -4,12 +4,7 @@
 }
 
 body {
-  font-size: 144px;
-}
-
-#output {
-  position: fixed;
-  font-family: 'Anonymous Pro';
+  /*background-color: black;*/
 }
 
 .shifted {
@@ -17,7 +12,13 @@ body {
   right: .5em;
 }
 
-.singleChar {
-  display: inline;
-  padding-left: -10px;
+.layer {
+  /*color: white;*/
+  font-size: 256px;
+  position: absolute;
+  top: 250px;
+  left: 50px;
+  font-family: Courier;
+  /* TODO: Scale opacity so that all layers have a total opacity of one for however many layers are in use. */
+  opacity: .15;
 }
