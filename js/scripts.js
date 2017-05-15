@@ -12,9 +12,12 @@ $(function() {
       } else if (inputChar === "z") {
         outputChar = "ya";
       } else if (alphabet.indexOf(inputChar) === -1) {
-        outputChar = inputChar;
+        outputChar = inputChar + " ";
       }
-      $("#output").text(outputChar);
-
+      $("#output").append(
+        "<div class='singleChar'>" +
+        outputChar[0] + "<span class='shifted'>" + outputChar[1] + "</span>" +
+        "</div>"
+      );
     });
 });

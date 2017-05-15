@@ -1,3 +1,16 @@
 body {
-  font-size: 26px;
+  font-size: 72px;
+}
+
+#output {
+  position: fixed;
+}
+
+.shifted {
+  position: relative;
+  right: 30px;
+}
+
+.singleChar {
+  display: inline;
 }
