@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: URL('fonts/Anonymous-Pro/Anonymous_Pro_B.ttf') format('ttf');
+}
+
+body {
+  font-size: 72px;
+}
+
+#output {
+  position: fixed;
+  font-family: 'Anonymous Pro';
+}
+
+.shifted {
+  position: relative;
+  right: .5em;
+}
+
+.singleChar {
+  display: inline;
+  padding-left: -10px;
+}
