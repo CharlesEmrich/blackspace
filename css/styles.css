@@ -33,6 +33,11 @@ img{
   width: 17%;
 }
 
+p{
+  text-align: center;
+  color:#515151;
+}
+
 .layer {
   position: absolute;
   top: 30.2%;
@@ -83,8 +88,6 @@ img{
    background-color: #000;
    outline: none;
    display: block;
-   /*margin: 0 auto;*/
-   float: left;
-   position: absolute;
+   position:absolute;
    bottom:1px;
  }
