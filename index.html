@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/p5.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/sketch.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" media="screen" charset="utf-8">
     <title>blackspace</title>
   </head>
     <body>
+
       <div class="container">
         <h1 id="logo">blackspace<h1>
         <h3>A text editor which contains everything except what you wrote.</h3>
         <textarea id="textBox" autofocus></textarea>
+        <select id="cipher-length">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <div id="layers">
+          <div id="layer0" class="layer"></div>
+          <div id="layer1" class="layer"></div>
+          <div id="layer2" class="layer"></div>
+          <div id="layer3" class="layer"></div>
+          <div id="layer4" class="layer"></div>
+          <div id="layer5" class="layer"></div>
+          <div id="layer6" class="layer"></div>
+          <div id="layer7" class="layer"></div>
+          <div id="layer8" class="layer"></div>
+          <div id="layer9" class="layer"></div>
+          <div id="layer10" class="layer"></div>
+          <div id="layer11" class="layer"></div>
+          <div id="layer12" class="layer"></div>
+          <div id="layer13" class="layer"></div>
+          <div id="layer14" class="layer"></div>
+          <div id="layer15" class="layer"></div>
+          <div id="layer16" class="layer"></div>
+          <div id="layer17" class="layer"></div>
+          <div id="layer18" class="layer"></div>
+          <div id="layer19" class="layer"></div>
+          <div id="layer20" class="layer"></div>
+          <div id="layer21" class="layer"></div>
+          <div id="layer22" class="layer"></div>
+          <div id="layer23" class="layer"></div>
+          <div id="layer24" class="layer"></div>
+        </div>
       </div>
-    <select id="cipher-length">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
-    <div id="layers">
-      <div id="layer0" class="layer"></div>
-      <div id="layer1" class="layer"></div>
-      <div id="layer2" class="layer"></div>
-      <div id="layer3" class="layer"></div>
-      <div id="layer4" class="layer"></div>
-      <div id="layer5" class="layer"></div>
-      <div id="layer6" class="layer"></div>
-      <div id="layer7" class="layer"></div>
-      <div id="layer8" class="layer"></div>
-      <div id="layer9" class="layer"></div>
-      <div id="layer10" class="layer"></div>
-      <div id="layer11" class="layer"></div>
-      <div id="layer12" class="layer"></div>
-      <div id="layer13" class="layer"></div>
-      <div id="layer14" class="layer"></div>
-      <div id="layer15" class="layer"></div>
-      <div id="layer16" class="layer"></div>
-      <div id="layer17" class="layer"></div>
-      <div id="layer18" class="layer"></div>
-      <div id="layer19" class="layer"></div>
-      <div id="layer20" class="layer"></div>
-      <div id="layer21" class="layer"></div>
-      <div id="layer22" class="layer"></div>
-      <div id="layer23" class="layer"></div>
-      <div id="layer24" class="layer"></div>
-    </div>
   </body>
 </html>

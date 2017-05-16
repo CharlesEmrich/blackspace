@@ -1,6 +1,15 @@
 body {
-  background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");
+  /*background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");*/
   /*background-color: black;*/
+}
+
+.container {
+}
+
+canvas {
+  position: fixed;
+  overflow: hidden;
+  z-index: -1;
 }
 
 @font-face {
