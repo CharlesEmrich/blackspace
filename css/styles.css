@@ -43,7 +43,7 @@ h1 {
 
 #layers {
   background: transparent;
-  font-family: "textGyre";
+  font-family: "Cutive Mono";
   outline: none;
   border-style: none;
   border-color: transparent;
@@ -59,7 +59,7 @@ h1 {
   top: 31.35%;
   left: 50%;
   background: transparent;
-  font-family: "textGyre";
+  font-family: "Cutive Mono";
   outline: none;
   width:50%;
   height: 50%;
@@ -81,6 +81,7 @@ h1 {
    background-color: #000;
    outline: none;
    display: block;
-   margin: 0 auto;
+   /*margin: 0 auto;*/
+   float: right;
+   top: 100%;
  }
- 
