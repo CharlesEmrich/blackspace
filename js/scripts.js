@@ -28,7 +28,8 @@ Cipher.prototype.encodeString = function (string, shift) {
       }
     }
     if (this.numbers.indexOf(string[i]) === -1 && this.alpha.indexOf(string[i]) === -1) {
-      for (var ii = 1; ii <= this.cipherLength + 1; ii++) {
+      for (var ii = 0; ii <= this.cipherLength + 1; ii++) {
+        //NOTE: Currently there's an unaddressed issue with spaces disappearing when we fire run this.
         charArr.push(string[i]);
       }
     }
