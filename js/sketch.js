@@ -138,14 +138,14 @@ function calcWave() {
     var x = theta;
     for (var i = 0; i < yvalues.length; i++) {
       // Every other wave is cosine instead of sine
-      if (i > .5 * yvalues.length) {
+      // if (i > .5 * yvalues.length - 1) {
+      //   if (j % 2 == 0)  yvalues[i] += (sin(x)*amplitude[j]) / (sin(x)*amplitude[j] * (yvalues.length - i ));
+      //   else yvalues[i] += (cos(x)*amplitude[j]) / (cos(x)*amplitude[j]);
+      // }
+      // if (i <= .5 * yvalues.length - 1) {
         if (j % 2 == 0)  yvalues[i] += sin(x)*amplitude[j];
         else yvalues[i] += cos(x)*amplitude[j];
-      }
-      if (i <= .5 * yvalues.length) {
-        if (j % 2 == 0)  yvalues[i] += sin(x)*amplitude[j];
-        else yvalues[i] += cos(x)*amplitude[j];
-      }
+      // }
       x+=dx[j];
     }
   }

@@ -1,6 +1,6 @@
 body {
   /*background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");*/
-  /*background-color: black;*/
+  background-color: black;
 }
 
 .container {
@@ -10,6 +10,8 @@ canvas {
   position: fixed;
   overflow: hidden;
   z-index: -1;
+  height: 100%;
+  width: 100%;
 }
 
 @font-face {
