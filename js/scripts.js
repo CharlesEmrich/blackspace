@@ -39,9 +39,9 @@ Cipher.prototype.encodeString = function (string) {
     if (this.numbers.indexOf(string[i]) === -1
      && this.alpha.indexOf(string[i]) === -1
      && this.alpha.map(function(e){ return e.toUpperCase() }).indexOf(string[i]) === -1) {
-      for (var ii = 0; ii <= this.cipherLength + 1; ii++) {
+      for (var ii = 1; ii <= this.cipherLength; ii++) {
         //NOTE: Currently there's an unaddressed issue with spaces disappearing when we fire run this.
-        charArr.push(string[i]);
+        charArr.push(string[i], string[i]);
       }
     }
     outputArr.push(charArr);
@@ -59,7 +59,8 @@ $(function() {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
         // if (this.alpha.indexOf(array[i][ii]) !== -1 || this.numbers.indexOf(array[i][ii]) !== -1) {
-          $("#layer" + ii).append(array[i][ii]);
+          $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
+          // $("#layer" + ii).append(array[i][ii]);
           $(".layer").css("opacity", 1 / (1 + this.cipherLength));
         // }
       }
