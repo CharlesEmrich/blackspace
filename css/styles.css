@@ -27,8 +27,9 @@ h1 {
   display: block;
 }
 
-#logo{
-  text-align: center;
+img{
+  display: block;
+  margin: auto;
 }
 
 .layer {
