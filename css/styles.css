@@ -30,12 +30,12 @@ h1 {
 img{
   display: block;
   margin: auto;
-  width: 15%;
+  width: 17%;
 }
 
 .layer {
   position: absolute;
-  top: 30%;
+  top: 30.2%;
   right: 50%;
   /*font-family: Courier;*/
   text-align: right;
@@ -58,7 +58,7 @@ img{
 
 #textBox {
   position: absolute;
-  top: 31.35%;
+  top: 30%;
   left: 50%;
   background: transparent;
   font-family: "Cutive Mono";
@@ -84,6 +84,7 @@ img{
    outline: none;
    display: block;
    /*margin: 0 auto;*/
-   float: right;
-   top: 100%;
+   float: left;
+   position: absolute;
+   bottom:1px;
  }
