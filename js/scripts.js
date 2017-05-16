@@ -40,7 +40,6 @@ Cipher.prototype.encodeString = function (string) {
      && this.alpha.indexOf(string[i]) === -1
      && this.alpha.map(function(e){ return e.toUpperCase() }).indexOf(string[i]) === -1) {
       for (var ii = 1; ii <= this.cipherLength; ii++) {
-        //NOTE: Currently there's an unaddressed issue with spaces disappearing when we fire run this.
         charArr.push(string[i], string[i]);
       }
     }
