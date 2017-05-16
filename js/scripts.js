@@ -49,7 +49,7 @@ $(function() {
       for (var ii = 0; ii < array[i].length; ii++) {
         // if (this.alpha.indexOf(array[i][ii]) !== -1 || this.numbers.indexOf(array[i][ii]) !== -1) {
           $("#layer" + ii).append(array[i][ii]);
-          $(".layer").css("opacity", 1 / (1 + this.cipherLength));
+          $(".layer").css("opacity", 1 / (1.1 + this.cipherLength));
         // }
       }
     }
@@ -61,12 +61,12 @@ $(function() {
   $("select").change(function(event) {
     //TODO:currently, each layer added creates one correct layer and one layer that is missing a space.
     ourCipher.cipherLength = parseInt($(this).val());
-    ourCipher.encodedArr = ourCipher.encodeString($("#input").val(), false);
+    ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), false);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
-  $("textarea").keypress(function(event) {
-    ourCipher.encodedArr = ourCipher.encodeString($("#input").val() + event.key.toLowerCase(), event.shiftKey);
+  $("#textBox").keypress(function(event) {
+    ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val() + event.key.toLowerCase(), event.shiftKey);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 });
