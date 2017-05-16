@@ -1,24 +1,70 @@
+body {
+  background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");
+  /*background-color: black;*/
+}
+
 @font-face {
   font-family: 'Anonymous Pro';
   src: URL('fonts/Anonymous-Pro/Anonymous_Pro_B.ttf') format('ttf');
 }
 
-body {
-  /*background-color: black;*/
+@font-face {
+    font-family: textGyre;
+    src: url("/Users/Guest/desktop/blackspace/fonts/texgyrecursor-regular.otf") format("opentype");
 }
 
-.shifted {
-  position: relative;
-  right: .5em;
+@font-face {
+    font-family: Larabiefont;
+    src: url("/Users/Guest/desktop/blackspace/fonts/larabiefont rg.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: digital;
+    src: url("/Users/Guest/desktop/blackspace/fonts/digital-7.ttf") format("opentype");
+}
+
+h1 {
+  display: block;
 }
 
 .layer {
-  /*color: white;*/
-  font-size: 256px;
   position: absolute;
-  top: 250px;
-  left: 50px;
-  font-family: Courier;
-  /* TODO: Scale opacity so that all layers have a total opacity of one for however many layers are in use. */
-  opacity: .15;
+  top: 30%;
+  right: 50%;
+  /*font-family: Courier;*/
+  text-align: right;
+  width:50%;
+  height: 50%;
+}
+
+#layers {
+  background: transparent;
+  font-family: "textGyre";
+  outline: none;
+  border-style: none;
+  border-color: transparent;
+  overflow: auto;
+  float: left;
+  background: transparent;
+  color: white;
+  font-size: 80px;
+}
+
+#textBox {
+  position: absolute;
+  top: 31.35%;
+  left: 50%;
+  background: transparent;
+  font-family: "textGyre";
+  outline: none;
+  width:50%;
+  height: 50%;
+  border-style: none;
+  border-color: transparent;
+  overflow: auto;
+  text-align: left;
+  float: right;
+  background: transparent;
+  color: white;
+  font-size: 80px;
 }
