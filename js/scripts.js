@@ -57,17 +57,15 @@ Cipher.prototype.encodeString = function (string, lastKey) {
 var ourCipher = new Cipher();
 /// User Interface ///
 $(function() {
+  autosize($("#textBox"));
   Cipher.prototype.displayCipherText = function (array) {
     $(".layer").empty();
     //This loops over the array of replacement letter arrays. ex. b => [a,c]
     for (var i = 0; i < array.length; i++) {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
-        // if (this.alpha.indexOf(array[i][ii]) !== -1 || this.numbers.indexOf(array[i][ii]) !== -1) {
           $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
-          // $("#layer" + ii).append(array[i][ii]);
           $(".layer").css("opacity", 1 / (1 + this.cipherLength));
-        // }
       }
     }
   };
@@ -80,7 +78,6 @@ $(function() {
       ourCipher.cipherLength ++;
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
     }
-    console.log($("#textBox").val());
     if (event.key === "ArrowDown" && $("#textBox").val() !== "" && ourCipher.cipherLength > 1) {
       ourCipher.cipherLength --;
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");

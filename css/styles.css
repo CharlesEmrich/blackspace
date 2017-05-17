@@ -45,7 +45,7 @@ p {
 .col-xs-6 {
   width: 50%;
   height: 80vh;
-  padding-top: 25vh;
+  padding-top: 22.75vh;
 }
 
 .header {
@@ -59,12 +59,12 @@ p {
   background: transparent;
   font-family: "Cutive Mono";
   color: white;
-  font-size: 100px;
+  font-size: 80px;
   overflow: auto;
   outline: none;
   border-style: none;
   border-color: transparent;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 #layers {
@@ -72,7 +72,7 @@ p {
   width: 100%;
   font-family: "Cutive Mono";
   color: white;
-  font-size: 100px;
+  font-size: 80px;
   overflow: auto;
 }
 
@@ -85,7 +85,7 @@ p {
   height: 100%;
   word-wrap: break-word;
   word-break: break-all;
-  overflow: hidden;
+  /*overflow: hidden;*/
   text-align: right;
 }
 

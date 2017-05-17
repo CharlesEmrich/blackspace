@@ -14,7 +14,7 @@ $(function(){
 
     // Specific how much the width of the canvas the waves should be
     // This can either be a number or a percent
-    wavesWidth: '110%',
+    wavesWidth: '65%',
 
     // An array of wave options
     waves: [
@@ -76,23 +76,23 @@ $(function(){
   $("#textBox").keypress(function(event) {
     //Flash on keypress:
     waves.waves.forEach(function(wave) {
-      wave.segmentLength += 20;
+      wave.segmentLength += 25;
       wave.lineWidth += 8;
     });
     setTimeout(function() {
       waves.waves.forEach(function(wave) {
-        wave.segmentLength -= 20;
+        wave.segmentLength -= 25;
         wave.lineWidth -= 7.75;
       });
     }, 250);
     //Flash amplitude on space:
     if (event.key === " ") {
       waves.waves.forEach(function(wave) {
-        wave.amplitude *= 1.2;
+        wave.amplitude *= 1.7;
       });
       setTimeout(function() {
         waves.waves.forEach(function(wave) {
-          wave.amplitude /= 1.2;
+          wave.amplitude /= 1.7;
         });
       }, 250);
     }
