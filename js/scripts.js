@@ -89,10 +89,24 @@ $(function() {
     $(".font-control").addClass(ourCipher.fonts[ourCipher.currentFont]);
   };
 
-  $("#textBox").keydown(function(event) {
-    if (event.key === "Backspace") {
-      ourCipher.encodedArr.pop();
-    }
+  $("#logo-img").click(function() {
+    html2canvas($("#layers"), {
+      background: '#000000',
+      logging: true,
+      onrendered: function(canvas) {
+        theCanvas = canvas;
+        // document.body.appendChild(canvas);
+
+        // Convert and download as image
+        Canvas2Image.saveAsPNG(canvas);
+        // $("#img-out").append(canvas);
+        // Clean up
+        //document.body.removeChild(canvas);
+      }
+    });
+  });
+  
+  $("body").keydown(function() {
     if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12 && event.metaKey) {
       ourCipher.cipherLength ++;
       $("#layers").addClass("bright");
@@ -111,7 +125,13 @@ $(function() {
     if (event.key === "ArrowLeft" && event.metaKey) {
       ourCipher.changeFont("-");
     }
-    // console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
+    ourCipher.displayCipherText(ourCipher.encodedArr);
+  });
+
+  $("#textBox").keydown(function(event) {
+    if (event.key === "Backspace") {
+      ourCipher.encodedArr.pop();
+    }
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 

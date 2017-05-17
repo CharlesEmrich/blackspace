@@ -4,6 +4,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="lib/sine-waves.min.js"></script>
     <script src="lib/autosize.min.js"></script>
+    <script src="lib/html2canvas.min.js"></script>
+    <script src="lib/canvas2image.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="js/sine.js"></script>
@@ -18,9 +21,9 @@
       <div class="container-fluid">
         <canvas id="waves"></canvas>
         <div class="header">
-          <img src="img/john.png">
+          <img id="logo-img" src="img/john.png">
           <p>A text editor which contains everything except what you entered.</p>
-          <p>Up and down arrow to control obfuscation. Left and right arrows change fonts.</p>
+          <p>Alt + Up and down arrow to control obfuscation. Alt + Left and right arrows change fonts.</p>
         </div>
         <div class="row">
           <div class="col-xs-6">
