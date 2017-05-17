@@ -1,104 +1,112 @@
+.anonymous-pro {
+  font-family: 'Anonymous Pro';
+}
+
+.cutive-mono {
+  font-family: "Cutive Mono";
+}
+
+.droid-sans {
+  font-family: "Droid Sans Mono";
+}
+
+.fira {
+  font-family: "Fira Mono";
+}
+
+.nova {
+  font-family: "Nova Mono";
+}
+
+.roboto {
+  font-family: "Roboto Mono";
+}
+
+.space-mono {
+  font-family: "Space Mono";
+}
+
+.ubuntu {
+  font-family: "Ubuntu Mono";
+}
+
+.vt323 {
+  font-family: "VT323";
+}
+
+.bright {
+  color: rgba(200, 253, 243, 1) !important;
+
+}
+
 body {
-  /*background-image: url("/Users/Guest/desktop/blackspace/img/johnimage.jpg");*/
   background-color: black;
 }
 
-.container {
-}
-
 canvas {
-  position: fixed;
-  overflow: hidden;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
+position: fixed;
+overflow: hidden;
+z-index: -1;
+height: 100% !important;
+width: 100% !important;
 }
 
-@font-face {
-  font-family: 'Anonymous Pro';
-  src: URL('fonts/Anonymous-Pro/Anonymous_Pro_B.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: textGyre;
-    src: url("/Users/Guest/desktop/blackspace/fonts/texgyrecursor-regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: Larabiefont;
-    src: url("/Users/Guest/desktop/blackspace/fonts/larabiefont rg.ttf") format("opentype");
-}
-
-@font-face {
-    font-family: digital;
-    src: url("/Users/Guest/desktop/blackspace/fonts/digital-7.ttf") format("opentype");
-}
-
-h1 {
-  display: block;
-}
-
-img{
+img {
   display: block;
   margin: auto;
-  width: 17%;
+  height: 12vh;
 }
 
-p{
-  text-align: center;
+p {
+  font-family: 'Anonymous Pro', fantasy;
+  font-size: 20px;
   color:#515151;
+}
+
+.col-xs-6 {
+  width: 50%;
+  height: 80vh;
+  padding-top: 22.75vh;
+}
+
+.header {
+  height: 18vh;
+  text-align: center;
+}
+
+
+#textBox {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  color: white;
+  font-size: 80px;
+  overflow: auto;
+  outline: none;
+  border-style: none;
+  border-color: transparent;
+  /*overflow: hidden;*/
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#layers {
+  height:100%;
+  width: 100%;
+  color: white;
+  font-size: 80px;
+  overflow: auto;
 }
 
 .layer {
   position: absolute;
-  top: 30.2%;
-  right: 50%;
-  /*font-family: Courier;*/
+  right: 0%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 0;
+  height: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+  /*overflow: hidden;*/
   text-align: right;
-  width:50%;
-  height: 50%;
 }
-
-#layers {
-  background: transparent;
-  font-family: "Cutive Mono";
-  outline: none;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  float: left;
-  background: transparent;
-  color: white;
-  font-size: 80px;
-}
-
-#textBox {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  background: transparent;
-  font-family: "Cutive Mono";
-  outline: none;
-  width:50%;
-  height: 50%;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  text-align: left;
-  float: right;
-  background: transparent;
-  color: white;
-  font-size: 80px;
-}
-
-.styled-select{
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   color: #fff;
-   background-color: #000;
-   outline: none;
-   display: block;
-   position:absolute;
-   bottom:1px;
- }

@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="js/sine-waves.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="lib/sine-waves.min.js"></script>
+    <script src="lib/autosize.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="js/sine.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Cutive+Mono|Droid+Sans+Mono|Fira+Mono|Nova+Mono|Roboto+Mono|Space+Mono|Ubuntu+Mono|VT323" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" media="screen" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
 
     <title>blackspace</title>
   </head>
     <body>
-      <canvas id="waves"></canvas>
-      <div class="container">
-        <p> ioasfio ijsa fiojas ijasi;oj fsajio as </p>
-        <img src="/Users/Guest/Desktop/blackspace/img/blackspacelogo.jpeg">
-        <textarea id="textBox" autofocus spellcheck="false" ></textarea>
+      <div class="container-fluid">
+        <canvas id="waves"></canvas>
+        <div class="header">
+          <img src="img/blackspacelogo.jpeg">
+          <p>A text editor which contains everything except what you entered.</p>
+          <p>Up and down arrow to control obfuscation. Left and right arrows change fonts.</p>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div id="layers" class="font-control cutive-mono">
+              <div id="layer0" class="layer"></div>
+              <div id="layer1" class="layer"></div>
+              <div id="layer2" class="layer"></div>
+              <div id="layer3" class="layer"></div>
+              <div id="layer4" class="layer"></div>
+              <div id="layer5" class="layer"></div>
+              <div id="layer6" class="layer"></div>
+              <div id="layer7" class="layer"></div>
+              <div id="layer8" class="layer"></div>
+              <div id="layer9" class="layer"></div>
+              <div id="layer10" class="layer"></div>
+              <div id="layer11" class="layer"></div>
+              <div id="layer12" class="layer"></div>
+              <div id="layer13" class="layer"></div>
+              <div id="layer14" class="layer"></div>
+              <div id="layer15" class="layer"></div>
+              <div id="layer16" class="layer"></div>
+              <div id="layer17" class="layer"></div>
+              <div id="layer18" class="layer"></div>
+              <div id="layer19" class="layer"></div>
+              <div id="layer20" class="layer"></div>
+              <div id="layer21" class="layer"></div>
+              <div id="layer22" class="layer"></div>
+              <div id="layer23" class="layer"></div>
+              <div id="layer24" class="layer"></div>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <textarea id="textBox" class="font-control cutive-mono"autofocus spellcheck="false" ></textarea>
+          </div>
+        </div>
       </div>
-    <select id="cipher-length" class="styled-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
-    <div id="layers">
-      <div id="layer0" class="layer"></div>
-      <div id="layer1" class="layer"></div>
-      <div id="layer2" class="layer"></div>
-      <div id="layer3" class="layer"></div>
-      <div id="layer4" class="layer"></div>
-      <div id="layer5" class="layer"></div>
-      <div id="layer6" class="layer"></div>
-      <div id="layer7" class="layer"></div>
-      <div id="layer8" class="layer"></div>
-      <div id="layer9" class="layer"></div>
-      <div id="layer10" class="layer"></div>
-      <div id="layer11" class="layer"></div>
-      <div id="layer12" class="layer"></div>
-      <div id="layer13" class="layer"></div>
-      <div id="layer14" class="layer"></div>
-      <div id="layer15" class="layer"></div>
-      <div id="layer16" class="layer"></div>
-      <div id="layer17" class="layer"></div>
-      <div id="layer18" class="layer"></div>
-      <div id="layer19" class="layer"></div>
-      <div id="layer20" class="layer"></div>
-      <div id="layer21" class="layer"></div>
-      <div id="layer22" class="layer"></div>
-      <div id="layer23" class="layer"></div>
-      <div id="layer24" class="layer"></div>
-    </div>
   </body>
 </html>

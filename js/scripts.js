@@ -2,12 +2,17 @@
 function Cipher () {
   this.alpha        = "abcdefghijklmnopqrstuvwxyz".split("");
   this.numbers      = "0123456789".split("");
+  this.currentFont  = 0;
+  this.fonts        = ['cutive-mono','anonymous-pro','droid-sans','fira','nova','roboto','space-mono','ubuntu','vt323'];
   this.cipherLength = 1;
   this.encodedArr   = [];
 }
 
-Cipher.prototype.encodeString = function (string) {
+Cipher.prototype.encodeString = function (string, lastKey) {
   var outputArr = [];
+  if (lastKey!== "Enter") {
+    string += lastKey;
+  }
   for (var i = 0; i < string.length; i++) {
     var charArr = []
     //Handles lowercase letters:
@@ -35,6 +40,9 @@ Cipher.prototype.encodeString = function (string) {
         charArr.unshift(this.numbers[(this.numbers.indexOf(string[i]) + 10 - ii) % 10]);
       }
     }
+    if(lastKey === "Enter") {
+      //TODO: incorporate line breaks into the outputArr.
+    }
     //Handles punctuation:
     if (this.numbers.indexOf(string[i]) === -1
      && this.alpha.indexOf(string[i]) === -1
@@ -51,33 +59,64 @@ Cipher.prototype.encodeString = function (string) {
 var ourCipher = new Cipher();
 /// User Interface ///
 $(function() {
+  autosize($("#textBox"));
   Cipher.prototype.displayCipherText = function (array) {
     $(".layer").empty();
     //This loops over the array of replacement letter arrays. ex. b => [a,c]
     for (var i = 0; i < array.length; i++) {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
-        // if (this.alpha.indexOf(array[i][ii]) !== -1 || this.numbers.indexOf(array[i][ii]) !== -1) {
           $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
-          // $("#layer" + ii).append(array[i][ii]);
           $(".layer").css("opacity", 1 / (1 + this.cipherLength));
-        // }
       }
     }
   };
-  Cipher.prototype.doStuffToString = function(userstringConfig, shiftKeyValue) {
-    //TODO: Use this to DRY out change and keypress handlers?
-  }
 
-  $("select").change(function(event) {
-    //TODO:currently, each layer added creates one correct layer and one layer that is missing a space.
-    ourCipher.cipherLength = parseInt($(this).val());
-    ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val());
+  Cipher.prototype.changeFont = function (direction) {
+    $(".font-control").removeClass(ourCipher.fonts[ourCipher.currentFont]);
+    if (direction === "+") {
+      ourCipher.currentFont ++;
+      if (ourCipher.currentFont > ourCipher.fonts.length - 1) {
+        ourCipher.currentFont = 0;
+      }
+    }
+    if (direction === "-") {
+      ourCipher.currentFont --;
+      if (ourCipher.currentFont < 0) {
+        ourCipher.currentFont = ourCipher.fonts.length - 1;
+      }
+    }
+    $(".font-control").addClass(ourCipher.fonts[ourCipher.currentFont]);
+  };
+
+  $("#textBox").keydown(function(event) {
+    if (event.key === "Backspace") {
+      ourCipher.encodedArr.pop();
+    }
+    if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12 && event.metaKey) {
+      ourCipher.cipherLength ++;
+      $("#layers").addClass("bright");
+      setTimeout(function() { $("#layers").removeClass("bright"); }, 250);
+      ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
+    }
+    if (event.key === "ArrowDown" && $("#textBox").val() !== "" && ourCipher.cipherLength > 1 && event.metaKey) {
+      ourCipher.cipherLength --;
+      $("#layers").addClass("bright");
+      setTimeout(function() { $("#layers").removeClass("bright"); }, 250);
+      ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
+    }
+    if (event.key === "ArrowRight" && event.metaKey) {
+      ourCipher.changeFont("+");
+    }
+    if (event.key === "ArrowLeft" && event.metaKey) {
+      ourCipher.changeFont("-");
+    }
+    // console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
   $("#textBox").keypress(function(event) {
-    ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val() + event.key);
+    ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), event.key);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 });
