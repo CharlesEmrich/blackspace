@@ -14,7 +14,7 @@ $(function(){
 
     // Specific how much the width of the canvas the waves should be
     // This can either be a number or a percent
-    wavesWidth: '110%',
+    wavesWidth: '65%',
 
     // An array of wave options
     waves: [
@@ -72,35 +72,42 @@ $(function(){
     }
   });
 
-  var redness = 255
+  var vowelColor    = [255, 255, 255, .1];
+  var capitalColor  = [255, 255, 255, .1];
   $("#textBox").keypress(function(event) {
     //Flash on keypress:
     waves.waves.forEach(function(wave) {
-      wave.segmentLength += 20;
+      wave.segmentLength += 25;
       wave.lineWidth += 8;
     });
     setTimeout(function() {
       waves.waves.forEach(function(wave) {
-        wave.segmentLength -= 20;
+        wave.segmentLength -= 25;
         wave.lineWidth -= 7.75;
       });
     }, 250);
     //Flash amplitude on space:
     if (event.key === " ") {
       waves.waves.forEach(function(wave) {
-        wave.amplitude *= 1.2;
+        wave.amplitude *= 1.7;
       });
       setTimeout(function() {
         waves.waves.forEach(function(wave) {
-          wave.amplitude /= 1.2;
+          wave.amplitude /= 1.7;
         });
       }, 250);
     }
-
     //Blue on vowels.
     if (event.key === "a" || event.key === "e" || event.key === "i" || event.key === "o" || event.key === "u") {
-      redness -= 50;
-      waves.waves[2].strokeStyle = 'rgba(' + redness + ', 255, 255, 0.1)'
+      vowelColor[0] -= 10;
+      waves.waves[2].strokeStyle = 'rgba(' + vowelColor[0] + ', ' + vowelColor[1] + ', ' + vowelColor[2] + ', ' + vowelColor[3] + ')'
+    }
+
+    if (event.shiftKey) {
+      capitalColor[0] -= 10;
+      capitalColor[1] -= 8;
+      capitalColor[3] += .02;
+      waves.waves[3].strokeStyle = 'rgba(' + capitalColor[0] + ', ' + capitalColor[1] + ', ' + capitalColor[2] + ', ' + capitalColor[3] + ')'
     }
   });
 });
