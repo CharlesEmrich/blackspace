@@ -5,7 +5,7 @@
 #### By _**Charles Emrich, Alyssa Moody, David Rolfs & John Dowd**_
 
 ## Description
-blackspace is not just any old text editor, blackspace is the gateway to character art. blackspace is a text editor that outputs characters other than what the user inputted. The outputs are symbols made up of keyboard characters that are adjacent. Curious --- lets make some characterArt 
+blackspace is not just any old text editor, blackspace is the gateway to character art. blackspace is a text editor that outputs characters other than what the user inputted. The outputs are glyphs made of characters adjacent to those entered. Curious? --- let's make some art! 
 
 ## Gh-pages
 https://charlesemrich.github.io/blackspace/
@@ -18,11 +18,11 @@ https://charlesemrich.github.io/blackspace/
 | Capitalized Letter returns adjacent letters capitalized. | A | B overlapping Z |
 | Number entered returns adjacent numbers overlapping | 1 | 0 overlapping 2|
 | Special character is entered returns that special character | " " | " " |
-| Up and down arrows select the amount of characters overlapping. | up arrow clicked once, A is inputted. | B,C,Y,Z overlap |
+| Up and down arrows (+ alt) select the amount of characters overlapping. | up arrow clicked once, A is inputted. | B,C,Y,Z overlap |
 | Output can return every letter or number that is not the one entered| A | letters B-Z overlapping|
-| When keys are pressed the waves thicken and turn square.| G | **~~~**|
-| When specific keys are entered the waves change colors.| D | ~~~(blue) |
-| Left and right arrows change fonts| > | Font change |
+| When keys are pressed the waves thicken and jaggify.| G | **~ ~ ~**|
+| When specific keys are entered the waves change colors.| D | ~ ~ ~ (blue) |
+| Left and right arrows (+ alt) change fonts | > | Font change |
 
 
 
@@ -45,7 +45,7 @@ Replace inputted character with adjacent cipher that is overlapped by user defin
 
 
 ## Support and contact details
-  * alyssanicholemoddy@gmail.com
+  * alyssanicholemoody@gmail.com
   * charles.emrich@gmail.com
   * irishdowd10@gmail.com
   * rolfs97@yahoo.com
