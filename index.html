@@ -9,8 +9,8 @@
     <script src="js/sine.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Cutive+Mono|Droid+Sans+Mono|Fira+Mono|Nova+Mono|Roboto+Mono|Space+Mono|Ubuntu+Mono|VT323" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" media="screen" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
 
     <title>blackspace</title>
   </head>
@@ -18,13 +18,13 @@
       <div class="container-fluid">
         <canvas id="waves"></canvas>
         <div class="header">
-          <img src="/Users/Guest/Desktop/blackspace/img/john.png">
+          <img src="img/john.png">
           <p>A text editor which contains everything except what you entered.</p>
-          <p>Up and down arrow to control obfuscation.</p>
+          <p>Up and down arrow to control obfuscation. Left and right arrows change fonts.</p>
         </div>
         <div class="row">
           <div class="col-xs-6">
-            <div id="layers">
+            <div id="layers" class="font-control cutive-mono">
               <div id="layer0" class="layer"></div>
               <div id="layer1" class="layer"></div>
               <div id="layer2" class="layer"></div>
@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="col-xs-6">
-            <textarea id="textBox" autofocus spellcheck="false" ></textarea>
+            <textarea id="textBox" class="font-control cutive-mono"autofocus spellcheck="false" ></textarea>
           </div>
         </div>
       </div>

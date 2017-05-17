@@ -2,6 +2,8 @@
 function Cipher () {
   this.alpha        = "abcdefghijklmnopqrstuvwxyz".split("");
   this.numbers      = "0123456789".split("");
+  this.currentFont  = 0;
+  this.fonts        = ['cutive-mono','anonymous-pro','droid-sans','fira','nova','roboto','space-mono','ubuntu','vt323'];
   this.cipherLength = 1;
   this.encodedArr   = [];
 }
@@ -70,11 +72,28 @@ $(function() {
     }
   };
 
+  Cipher.prototype.changeFont = function (direction) {
+    $(".font-control").removeClass(ourCipher.fonts[ourCipher.currentFont]);
+    if (direction === "+") {
+      ourCipher.currentFont ++;
+      if (ourCipher.currentFont > ourCipher.fonts.length - 1) {
+        ourCipher.currentFont = 0;
+      }
+    }
+    if (direction === "-") {
+      ourCipher.currentFont --;
+      if (ourCipher.currentFont < 0) {
+        ourCipher.currentFont = ourCipher.fonts.length - 1;
+      }
+    }
+    $(".font-control").addClass(ourCipher.fonts[ourCipher.currentFont]);
+  };
+
   $("#textBox").keydown(function(event) {
     if (event.key === "Backspace") {
       ourCipher.encodedArr.pop();
     }
-    if (event.key === "ArrowUp" && $("#textBox").val() !== "") {
+    if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12) {
       ourCipher.cipherLength ++;
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
     }
@@ -82,6 +101,14 @@ $(function() {
       ourCipher.cipherLength --;
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
     }
+    if (event.key === "ArrowRight") {
+      ourCipher.changeFont("+");
+    }
+    if (event.key === "ArrowLeft") {
+      ourCipher.changeFont("-");
+    }
+    console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
+    //add handlers here to loop through that array and reassign the CSS rule.
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 

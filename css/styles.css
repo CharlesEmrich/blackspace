@@ -1,22 +1,37 @@
-
-@font-face {
+.anonymous-pro {
   font-family: 'Anonymous Pro';
-  src: URL('fonts/Anonymous-Pro/Anonymous_Pro_B.ttf') format('ttf');
 }
 
-@font-face {
-    font-family: textGyre;
-    src: url("/Users/Guest/desktop/blackspace/fonts/texgyrecursor-regular.otf") format("opentype");
+.cutive-mono {
+  font-family: "Cutive Mono";
 }
 
-@font-face {
-    font-family: Larabiefont;
-    src: url("/Users/Guest/desktop/blackspace/fonts/larabiefont rg.ttf") format("opentype");
+.droid-sans {
+  font-family: "Droid Sans Mono";
 }
 
-@font-face {
-    font-family: digital;
-    src: url("/Users/Guest/desktop/blackspace/fonts/digital-7.ttf") format("opentype");
+.fira {
+  font-family: "Fira Mono";
+}
+
+.nova {
+  font-family: "Nova Mono";
+}
+
+.roboto {
+  font-family: "Roboto Mono";
+}
+
+.space-mono {
+  font-family: "Space Mono";
+}
+
+.ubuntu {
+  font-family: "Ubuntu Mono";
+}
+
+.vt323 {
+  font-family: "VT323";
 }
 
 body {
@@ -38,6 +53,7 @@ img {
 }
 
 p {
+  font-family: 'Anonymous Pro', fantasy;
   font-size: 20px;
   color:#515151;
 }
@@ -53,11 +69,11 @@ p {
   text-align: center;
 }
 
+
 #textBox {
   height: 100%;
   width: 100%;
   background: transparent;
-  font-family: "Cutive Mono";
   color: white;
   font-size: 80px;
   overflow: auto;
@@ -65,12 +81,13 @@ p {
   border-style: none;
   border-color: transparent;
   /*overflow: hidden;*/
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 #layers {
   height:100%;
   width: 100%;
-  font-family: "Cutive Mono";
   color: white;
   font-size: 80px;
   overflow: auto;
@@ -88,46 +105,3 @@ p {
   /*overflow: hidden;*/
   text-align: right;
 }
-
-/*
-#layers {
-  height:100%;
-  width: 100%;
-  background: transparent;
-  font-family: "Cutive Mono";
-  outline: none;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  float: left;
-  background: transparent;
-  color: white;
-  font-size: 80px;
-}
-
-#textBox {
-  height: 100%;
-  background: transparent;
-  font-family: "Cutive Mono";
-  outline: none;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  text-align: left;
-  float: right;
-  background: transparent;
-  color: white;
-  font-size: 80px;
-}
-
-.styled-select{
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   color: #fff;
-   background-color: #000;
-   outline: none;
-   display: block;
-   position:absolute;
-   bottom:1px;
- }
