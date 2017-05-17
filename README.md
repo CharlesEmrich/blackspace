@@ -5,7 +5,7 @@
 #### By _**Charles Emrich, Alyssa Moody, David Rolfs & John Dowd**_
 
 ## Description
-The user
+blackspace is not just any old text editor, blackspace is the gateway to character art. blackspace is a text editor that outputs characters other than what the user inputted. The outputs are symbols made up of keyboard characters that are adjacent. Curious --- lets make some characterArt 
 
 ## Gh-pages
 https://charlesemrich.github.io/blackspace/
@@ -20,9 +20,9 @@ https://charlesemrich.github.io/blackspace/
 | Special character is entered returns that special character | " " | " " |
 | Up and down arrows select the amount of characters overlapping. | up arrow clicked once, A is inputted. | B,C,Y,Z overlap |
 | Output can return every letter or number that is not the one entered| A | letters B-Z overlapping|
-| When keys are pressed the waves thicken and turn square.|
-| When specific keys are entered the waves change colors.|
-| Left and right arrows change fonts|
+| When keys are pressed the waves thicken and turn square.| G | **~~~**|
+| When specific keys are entered the waves change colors.| D | ~~~(blue) |
+| Left and right arrows change fonts| > | Font change |
 
 
 
@@ -53,7 +53,7 @@ Replace inputted character with adjacent cipher that is overlapped by user defin
 
 ## Technologies Used
 
-_HTML, CSS, JavaScript, jQuery_
+_HTML, CSS, JavaScript, jQuery, Bootstrap, Github_
 
 ### License
 
