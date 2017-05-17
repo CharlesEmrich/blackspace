@@ -23,13 +23,13 @@ body {
   background-color: black;
 }
 
-/*canvas {
+canvas {
 position: fixed;
 overflow: hidden;
 z-index: -1;
-height: 100%;
-width: 100%;
-}*/
+height: 100% !important;
+width: 100% !important;
+}
 
 img {
   display: block;
@@ -45,6 +45,7 @@ p {
 .col-xs-6 {
   width: 50%;
   height: 80vh;
+  padding-top: 25vh;
 }
 
 .header {
@@ -58,7 +59,7 @@ p {
   background: transparent;
   font-family: "Cutive Mono";
   color: white;
-  font-size: 80px;
+  font-size: 100px;
   overflow: auto;
   outline: none;
   border-style: none;
@@ -71,7 +72,7 @@ p {
   width: 100%;
   font-family: "Cutive Mono";
   color: white;
-  font-size: 80px;
+  font-size: 100px;
   overflow: auto;
 }
 

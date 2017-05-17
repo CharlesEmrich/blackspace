@@ -72,7 +72,7 @@ $(function() {
     }
   };
 
-  $("#textBox").keyup(function(event) {
+  $("#textBox").keydown(function(event) {
     if (event.key === "Backspace") {
       ourCipher.encodedArr.pop();
     }
