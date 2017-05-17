@@ -38,9 +38,20 @@ h1 {
   display: block;
 }
 
+img{
+  display: block;
+  margin: auto;
+  width: 17%;
+}
+
+p{
+  text-align: center;
+  color:#515151;
+}
+
 .layer {
   position: absolute;
-  top: 30%;
+  top: 30.2%;
   right: 50%;
   /*font-family: Courier;*/
   text-align: right;
@@ -50,7 +61,7 @@ h1 {
 
 #layers {
   background: transparent;
-  font-family: "textGyre";
+  font-family: "Cutive Mono";
   outline: none;
   border-style: none;
   border-color: transparent;
@@ -63,10 +74,10 @@ h1 {
 
 #textBox {
   position: absolute;
-  top: 31.35%;
+  top: 30%;
   left: 50%;
   background: transparent;
-  font-family: "textGyre";
+  font-family: "Cutive Mono";
   outline: none;
   width:50%;
   height: 50%;
@@ -79,3 +90,15 @@ h1 {
   color: white;
   font-size: 80px;
 }
+
+.styled-select{
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #fff;
+   background-color: #000;
+   outline: none;
+   display: block;
+   position:absolute;
+   bottom:1px;
+ }
