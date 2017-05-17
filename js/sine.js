@@ -72,7 +72,8 @@ $(function(){
     }
   });
 
-  var redness = 255
+  var vowelColor    = [255, 255, 255, .1];
+  var capitalColor  = [255, 255, 255, .1];
   $("#textBox").keypress(function(event) {
     //Flash on keypress:
     waves.waves.forEach(function(wave) {
@@ -96,11 +97,17 @@ $(function(){
         });
       }, 250);
     }
-
     //Blue on vowels.
     if (event.key === "a" || event.key === "e" || event.key === "i" || event.key === "o" || event.key === "u") {
-      redness -= 50;
-      waves.waves[2].strokeStyle = 'rgba(' + redness + ', 255, 255, 0.1)'
+      vowelColor[0] -= 10;
+      waves.waves[2].strokeStyle = 'rgba(' + vowelColor[0] + ', ' + vowelColor[1] + ', ' + vowelColor[2] + ', ' + vowelColor[3] + ')'
+    }
+
+    if (event.shiftKey) {
+      capitalColor[0] -= 10;
+      capitalColor[1] -= 8;
+      capitalColor[3] += .02;
+      waves.waves[3].strokeStyle = 'rgba(' + capitalColor[0] + ', ' + capitalColor[1] + ', ' + capitalColor[2] + ', ' + capitalColor[3] + ')'
     }
   });
 });
