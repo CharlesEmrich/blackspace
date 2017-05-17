@@ -34,6 +34,11 @@
   font-family: "VT323";
 }
 
+.bright {
+  color: rgba(200, 253, 243, 1) !important;
+
+}
+
 body {
   background-color: black;
 }

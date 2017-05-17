@@ -93,22 +93,25 @@ $(function() {
     if (event.key === "Backspace") {
       ourCipher.encodedArr.pop();
     }
-    if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12) {
+    if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12 && event.metaKey) {
       ourCipher.cipherLength ++;
+      $("#layers").addClass("bright");
+      setTimeout(function() { $("#layers").removeClass("bright"); }, 250);
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
     }
-    if (event.key === "ArrowDown" && $("#textBox").val() !== "" && ourCipher.cipherLength > 1) {
+    if (event.key === "ArrowDown" && $("#textBox").val() !== "" && ourCipher.cipherLength > 1 && event.metaKey) {
       ourCipher.cipherLength --;
+      $("#layers").addClass("bright");
+      setTimeout(function() { $("#layers").removeClass("bright"); }, 250);
       ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), "");
     }
-    if (event.key === "ArrowRight") {
+    if (event.key === "ArrowRight" && event.metaKey) {
       ourCipher.changeFont("+");
     }
-    if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft" && event.metaKey) {
       ourCipher.changeFont("-");
     }
-    console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
-    //add handlers here to loop through that array and reassign the CSS rule.
+    // console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
