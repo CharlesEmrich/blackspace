@@ -109,14 +109,14 @@ $(function() {
       ourCipher.changeFont("-");
     }
     if (event.key === "0" && event.metaKey) {
-      $(".layer").css("text-align", "center !important");
+      $("#layers").css("height", $("#layer0").height());
+      $("#layers").css("width", "calc(10px + " + $("#layer0").width() + "px)");
       html2canvas($("#layers"), {
           background: '#000000',
-          logging: true
+          logging: true,
           }
         ).then(function(canvas) {
           Canvas2Image.saveAsPNG(canvas);
-          // $(".layer").css("text-align", "center !important");
         });
     }
     ourCipher.displayCipherText(ourCipher.encodedArr);
