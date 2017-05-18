@@ -9,7 +9,6 @@ function Cipher () {
 }
 
 Cipher.prototype.encodeString = function (string, lastKey) {
-  // console.log(string.includes("\n"));
   var outputArr = [];
   if (lastKey!== "Enter") {
     string += lastKey;
@@ -44,11 +43,12 @@ Cipher.prototype.encodeString = function (string, lastKey) {
         charArr.unshift(this.numbers[(this.numbers.indexOf(string[i]) + 10 - ii) % 10]);
       }
     }
+    //Handles newlines:
     if(string[i] === "\n") {
       for (var ii = 1; ii <= this.cipherLength; ii++) {
         charArr.push("<br>","<br>");
       }
-      //Handles punctuation:
+    //Handles punctuation:
     } else if (this.numbers.indexOf(string[i]) === -1
      && this.alpha.indexOf(string[i]) === -1
      && this.alpha.map(function(e){ return e.toUpperCase() }).indexOf(string[i]) === -1) {
@@ -58,7 +58,6 @@ Cipher.prototype.encodeString = function (string, lastKey) {
     }
     outputArr.push(charArr);
   }
-  console.log(outputArr);
   return outputArr;
 };
 
@@ -73,10 +72,10 @@ $(function() {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
         if (array[i][ii] === "<br>") {
-          $("#layer" + ii).append("<br>");
+          $("#layer" + ii).append(array[i][ii]);
         } else {
-          $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
-          $(".layer").css("opacity", 1 / (1 + this.cipherLength));          
+          $("#layer" + ii).append(array[i][ii]);
+          $(".layer").css("opacity", 1 / (1 + this.cipherLength));
         }
       }
     }
