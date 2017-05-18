@@ -99,6 +99,7 @@ $(function() {
   };
 
   $("body").keydown(function() {
+    console.log($("body")[0].classList[0]);
     if (event.key === "ArrowUp" && $("#textBox").val() !== "" && ourCipher.cipherLength < 12 && event.metaKey) {
       ourCipher.cipherLength ++;
       $("#layers").addClass("bright");
@@ -120,8 +121,13 @@ $(function() {
     if (event.key === "0" && event.metaKey) {
       $("#layers").css("height", $("#layer0").height());
       $("#layers").css("width", "calc(10px + " + $("#layer0").width() + "px)");
+      if ($("body")[0].classList[0]) {
+        var bgc = '#FFFFFF';
+      } else {
+        var bgc = '#000000';
+      }
       html2canvas($("#layers"), {
-          background: '#000000',
+          background: bgc,
           logging: true,
           }
         ).then(function(canvas) {

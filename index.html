@@ -12,7 +12,7 @@
     <script src="js/sine.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Cutive+Mono|Droid+Sans+Mono|Fira+Mono|Nova+Mono|Roboto+Mono|Space+Mono|Ubuntu+Mono|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Cutive+Mono|Droid+Sans+Mono|Fira+Mono|Nova+Mono|Roboto+Mono|Space+Mono|Ubuntu+Mono|VT323" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" media="screen" charset="utf-8">
 
     <title>blackspace</title>
@@ -20,25 +20,25 @@
     <body>
       <div class="container-fluid">
         <canvas id="waves"></canvas>
-        <ul class="menu cf">
-          <li>
-            <p>- R U L E S -</p>
-            <ul class="submenu">
-              <li><p>Alt + Up and down arrow to control obfuscation.</p></li>
-              <li><p>Alt + Left and right arrows change fonts.</p></li>
-              <li><p>Alt + Backspace turns on strobe effect.</p></li>
-              <li><p>Alt + 0 prints your encoded message.</p></li>
-            </ul>
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li><a>R U L E S<div id="down-triangle"></div></a>
+              <ul>
+                <li><a>Alt + Up and down arrow to control obfuscation.</a></li>
+                <li><a>Alt + Left and right arrows change fonts.</a></li>
+                <li><a>Alt + Backspace turns on strobe effect.</a></li>
+                <li><a>Alt + 0 prints your encoded message.</a></li>
+                <li><a>Click logo to go to whitespace.</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
         <div class="header">
           <div id="logo-img">
             <img id ="blackspace-logo" src="img/blackspacelogo.jpeg">
             <img id="whitespace-logo" src="img/whiteLogo.png">
             <p>A text editor which contains everything except what you entered.</p>
           </div>
-
-
         </div>
         <div class="row">
           <div class="col-xs-6">
