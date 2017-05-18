@@ -119,6 +119,16 @@ $(function() {
           // $(".layer").css("text-align", "center !important");
         });
     }
+    ///Strobe
+    if (event.key === "Backspace" && event.metaKey) {
+        $("#textBox").keypress(function(){
+          $("#whitespace-logo").toggle();
+          $("#blackspace-logo").toggle();
+          $("body").toggleClass("white-body");
+          $(".text-box").toggleClass("black-text");
+          $(".layers").toggleClass("black-text");
+        });
+      }
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
@@ -133,5 +143,14 @@ $(function() {
   $("#textBox").keypress(function(event) {
     ourCipher.encodedArr = ourCipher.encodeString($("#textBox").val(), event.key);
     ourCipher.displayCipherText(ourCipher.encodedArr);
+  });
+
+    ///WhiteSpace
+    $("img").click(function(){
+        $("#whitespace-logo").toggle();
+        $("#blackspace-logo").toggle();
+        $("body").toggleClass("white-body");
+        $(".text-box").toggleClass("black-text");
+        $(".layers").toggleClass("black-text");
   });
 });

@@ -43,6 +43,10 @@ body {
   background-color: black;
 }
 
+.white-body{
+  background-color: white;
+}
+
 canvas {
 position: fixed;
 overflow: hidden;
@@ -75,7 +79,7 @@ p {
 }
 
 
-#textBox {
+.text-box {
   height: 100%;
   width: 100%;
   background: transparent;
@@ -90,12 +94,16 @@ p {
   word-break: break-all;
 }
 
-#layers {
+.layers {
   height:100%;
   width: 100%;
   color: white;
   font-size: 80px;
   overflow: auto;
+}
+
+.black-text {
+  color: black;
 }
 
 .layer {
@@ -109,4 +117,9 @@ p {
   word-break: break-all;
   /*overflow: hidden;*/
   text-align: right;
+}
+
+
+#whitespace-logo {
+  display: none;
 }

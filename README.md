@@ -1,11 +1,11 @@
 # blackspace
 
-####  _May 17th, 2017_
+####  _May 18th, 2017_
 
 #### By _**Charles Emrich, Alyssa Moody, David Rolfs & John Dowd**_
 
 ## Description
-blackspace is not just any old text editor, blackspace is the gateway to character art. blackspace is a text editor that outputs characters other than what the user inputted. The outputs are glyphs made of characters adjacent to those entered. Curious? --- let's make some art! 
+blackspace is not just any old text editor, blackspace is the gateway to character art. blackspace is a text editor that outputs characters other than what the user inputted. The outputs are glyphs made of characters adjacent to those entered. Curious? --- let's make some art!
 
 ## Gh-pages
 https://charlesemrich.github.io/blackspace/
