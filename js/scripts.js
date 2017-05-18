@@ -42,6 +42,9 @@ Cipher.prototype.encodeString = function (string, lastKey) {
     }
     if(lastKey === "Enter") {
       //TODO: incorporate line breaks into the outputArr.
+      for (var ii = 1; ii <= this.cipherLength; ii++) {
+        charArr.push("RETURN");
+      }
     }
     //Handles punctuation:
     if (this.numbers.indexOf(string[i]) === -1
@@ -53,6 +56,7 @@ Cipher.prototype.encodeString = function (string, lastKey) {
     }
     outputArr.push(charArr);
   }
+  console.log(outputArr);
   return outputArr;
 };
 
@@ -126,7 +130,6 @@ $(function() {
     if (event.key === "Backspace") {
       ourCipher.encodedArr.pop();
     }
-    // console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
