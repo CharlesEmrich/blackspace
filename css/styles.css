@@ -47,12 +47,12 @@ body {
   background-color: white;
 }
 
-canvas {
+canvas#waves {
 position: fixed;
 overflow: hidden;
 z-index: -1;
-height: 100% !important;
-width: 100% !important;
+height: 100%;
+width: 100%;
 }
 
 img {
@@ -74,6 +74,7 @@ p {
 }
 
 
+
 .text-box {
   height: 100%;
   width: 100%;
@@ -84,17 +85,17 @@ p {
   outline: none;
   border-style: none;
   border-color: transparent;
-  /*overflow: hidden;*/
   word-wrap: break-word;
   word-break: break-all;
 }
 
+
 .layers {
-  height:100%;
+  float: right;
+  height: 100%;
   width: 100%;
   color: white;
   font-size: 80px;
-  overflow: auto;
 }
 
 .black-text {
@@ -103,14 +104,13 @@ p {
 
 .layer {
   position: absolute;
-  right: 0%;
+  right: 0.25em;
   display: inline-block;
   margin-left: auto;
   margin-right: 0;
-  height: 100%;
+  height: auto;
   word-wrap: break-word;
   word-break: break-all;
-  /*overflow: hidden;*/
   text-align: right;
 }
 

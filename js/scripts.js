@@ -12,7 +12,10 @@ Cipher.prototype.encodeString = function (string, lastKey) {
   var outputArr = [];
   if (lastKey!== "Enter") {
     string += lastKey;
+  } else if (lastKey === "Enter") {
+    string += "\n";
   }
+
   for (var i = 0; i < string.length; i++) {
     var charArr = []
     //Handles lowercase letters:
@@ -40,11 +43,13 @@ Cipher.prototype.encodeString = function (string, lastKey) {
         charArr.unshift(this.numbers[(this.numbers.indexOf(string[i]) + 10 - ii) % 10]);
       }
     }
-    if(lastKey === "Enter") {
-      //TODO: incorporate line breaks into the outputArr.
-    }
+    //Handles newlines:
+    if(string[i] === "\n") {
+      for (var ii = 1; ii <= this.cipherLength; ii++) {
+        charArr.push("<br>","<br>");
+      }
     //Handles punctuation:
-    if (this.numbers.indexOf(string[i]) === -1
+    } else if (this.numbers.indexOf(string[i]) === -1
      && this.alpha.indexOf(string[i]) === -1
      && this.alpha.map(function(e){ return e.toUpperCase() }).indexOf(string[i]) === -1) {
       for (var ii = 1; ii <= this.cipherLength; ii++) {
@@ -66,8 +71,12 @@ $(function() {
     for (var i = 0; i < array.length; i++) {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
-          $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
+        if (array[i][ii] === "<br>") {
+          $("#layer" + ii).append(array[i][ii]);
+        } else {
+          $("#layer" + ii).append(array[i][ii]);
           $(".layer").css("opacity", 1 / (1 + this.cipherLength));
+        }
       }
     }
   };
@@ -109,14 +118,14 @@ $(function() {
       ourCipher.changeFont("-");
     }
     if (event.key === "0" && event.metaKey) {
-      $(".layer").css("text-align", "center !important");
+      $("#layers").css("height", $("#layer0").height());
+      $("#layers").css("width", "calc(10px + " + $("#layer0").width() + "px)");
       html2canvas($("#layers"), {
           background: '#000000',
-          logging: true
+          logging: true,
           }
         ).then(function(canvas) {
           Canvas2Image.saveAsPNG(canvas);
-          // $(".layer").css("text-align", "center !important");
         });
     }
     ///Strobe
@@ -136,7 +145,6 @@ $(function() {
     if (event.key === "Backspace") {
       ourCipher.encodedArr.pop();
     }
-    // console.log("Pressed: " + event.key + "\n currentFont Index: " + ourCipher.currentFont + "\n currentFont: " + ourCipher.fonts[ourCipher.currentFont]);
     ourCipher.displayCipherText(ourCipher.encodedArr);
   });
 
