@@ -20,15 +20,29 @@
     <body>
       <div class="container-fluid">
         <canvas id="waves"></canvas>
+        <ul class="menu cf">
+          <li>
+            <p>- R U L E S -</p>
+            <ul class="submenu">
+              <li><p>Alt + Up and down arrow to control obfuscation.</p></li>
+              <li><p>Alt + Left and right arrows change fonts.</p></li>
+              <li><p>Alt + Backspace turns on strobe effect.</p></li>
+              <li><p>Alt + 0 prints your encoded message.</p></li>
+            </ul>
+          </li>
+        </ul>
         <div class="header">
-          <img id="logo-img" src="img/blackspacelogo.jpeg">
+          <div id="logo-img">
+            <img id ="blackspace-logo" src="img/blackspacelogo.jpeg">
+            <img id="whitespace-logo" src="img/whiteLogo.png">
+            <p>A text editor which contains everything except what you entered.</p>
+          </div>
 
-          <p>A text editor which contains everything except what you entered.</p>
-          <p>Alt + Up and down arrow to control obfuscation. Alt + Left and right arrows change fonts.</p>
+
         </div>
         <div class="row">
           <div class="col-xs-6">
-            <div id="layers" class="font-control cutive-mono">
+            <div id="layers" class="font-control cutive-mono layers">
               <div id="layer0" class="layer"></div>
               <div id="layer1" class="layer"></div>
               <div id="layer2" class="layer"></div>
@@ -57,7 +71,7 @@
             </div>
           </div>
           <div class="col-xs-6">
-            <textarea id="textBox" class="font-control cutive-mono"autofocus spellcheck="false" ></textarea>
+            <textarea id="textBox" class="font-control cutive-mono text-box"autofocus spellcheck="false" ></textarea>
           </div>
         </div>
       </div>

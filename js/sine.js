@@ -106,7 +106,6 @@ $(function(){
     if (event.shiftKey) {
       capitalColor[0] -= 10;
       capitalColor[1] -= 8;
-      capitalColor[3] += .02;
       waves.waves[3].strokeStyle = 'rgba(' + capitalColor[0] + ', ' + capitalColor[1] + ', ' + capitalColor[2] + ', ' + capitalColor[3] + ')'
     }
   });
