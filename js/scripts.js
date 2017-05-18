@@ -9,10 +9,14 @@ function Cipher () {
 }
 
 Cipher.prototype.encodeString = function (string, lastKey) {
+  // console.log(string.includes("\n"));
   var outputArr = [];
   if (lastKey!== "Enter") {
     string += lastKey;
+  } else if (lastKey === "Enter") {
+    string += "\n";
   }
+
   for (var i = 0; i < string.length; i++) {
     var charArr = []
     //Handles lowercase letters:
@@ -40,14 +44,12 @@ Cipher.prototype.encodeString = function (string, lastKey) {
         charArr.unshift(this.numbers[(this.numbers.indexOf(string[i]) + 10 - ii) % 10]);
       }
     }
-    if(lastKey === "Enter") {
-      //TODO: incorporate line breaks into the outputArr.
+    if(string[i] === "\n") {
       for (var ii = 1; ii <= this.cipherLength; ii++) {
-        charArr.push("RETURN");
+        charArr.push("<br>","<br>");
       }
-    }
-    //Handles punctuation:
-    if (this.numbers.indexOf(string[i]) === -1
+      //Handles punctuation:
+    } else if (this.numbers.indexOf(string[i]) === -1
      && this.alpha.indexOf(string[i]) === -1
      && this.alpha.map(function(e){ return e.toUpperCase() }).indexOf(string[i]) === -1) {
       for (var ii = 1; ii <= this.cipherLength; ii++) {
@@ -70,8 +72,12 @@ $(function() {
     for (var i = 0; i < array.length; i++) {
       //loops over each individual replacement letter array.
       for (var ii = 0; ii < array[i].length; ii++) {
+        if (array[i][ii] === "<br>") {
+          $("#layer" + ii).append("<br>");
+        } else {
           $("#layer" + ii).text($("#layer" + ii).text() + array[i][ii]);
-          $(".layer").css("opacity", 1 / (1 + this.cipherLength));
+          $(".layer").css("opacity", 1 / (1 + this.cipherLength));          
+        }
       }
     }
   };
